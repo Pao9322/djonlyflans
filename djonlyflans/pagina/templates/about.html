@@ -1,6 +1,53 @@
 {% extends 'base.html'%}
-<html>
-    <body>
-        acerca
-    </body>
-</html>
+
+{%block 'content'%}
+<section id="acerca" style="background-color: rgb(253, 253, 253);" class="container text-center my-5 d-none d-md-block">
+    <h2 class="display-3 fw-medium my-4">Acerca de</h2>
+        <div class="container" id="quienes somos" style="background-color: yellow;">
+            <div class="row" >
+             <div class="col-12 col-md-4">
+                <div class="card" style="background-color: yellow;">
+                    <div class="card-body">
+                        <h5 class="card-header" id="avion" style="background-color: #f8fc03;"><i class="fa-brands fa-avianex"></i></h5>
+               
+                <p class="my-3 mt-5"> 
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                     aliquip ex ea commodo consequat aliquip ex ea commodo consequat.
+                </p>
+                     </div>
+                </div>
+            </div>
+                 <div class="col-12 col-md-4">
+                    <div class="card" style="background-color: yellow;">
+                        <div class="card-body">
+                     <p class="my-3 mt-5">
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                     aliquip ex ea commodo consequat.
+                    </p>
+                    <div class="card-footer border-secondary"id="mountain" style="background-color:yellow;"><i class="fa-solid fa-mountain"></i></div>
+                        </div>
+                        </div>
+                </div>
+                 <div class="col-12 col-md-4">
+                    <div class="card" style="background-color: yellow;">
+                        <div class="card-body" >
+                    <h5 class="card-header" style="background-color: yellow;" id="maps" ><i class="fa-solid fa-map-location-dot"></i></h5>
+                    
+                     <p class="my-3 mt-5">
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                     aliquip ex ea commodo consequat.
+                 </p>
+            </div>
+            </div>
+            </div>
+            </div>
+         </div>
+        </div>
+    </section>
+         {% endblock %}
