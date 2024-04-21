@@ -1,12 +1,56 @@
 {% extends 'base.html' %}
 
 {% block 'content' %}
-<div class="container">
-    contact
-    <form action="/contact/" method="post">
+<style>
+    /* Estilos para centrar el formulario en la página */
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; 
+        height: 100vh; /* Esto hace que el contenedor ocupe toda la altura de la ventana */
+    }
+    
+    /* Estilos para el formulario */
+    .form {
+        width: 50%; /* Ajusta el ancho según sea necesario */
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    /* Estilos para los grupos de campos del formulario */
+    .form-group {
+        margin-bottom: 20px; /* Espacio entre cada grupo de campos */
+        width: 100%;
+    }
+    .title {
+    font-size: 24px; /* Tamaño del título */
+    margin-bottom: 20px; /* Espacio entre el título y el formulario */
+    }
+    </style>
+
+
+<div class="form-container">  
+    <h2 class="title">Contáctanos</h2> <!-- Título -->  
+    <form class="form" action="/contact/" method="post">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
-    </form>
+    <div class="form-group">
+        {{ form.customer_email.label_tag }}
+        {{ form.customer_email }}
+        {{ form.customer_email.errors }}
+    </div>
+    <div class="form-group">
+        {{ form.customer_name.label_tag }}
+        {{ form.customer_name }}
+        {{ form.customer_name.errors }}
+    </div>
+    <div class="form-group">
+        {{ form.message.label_tag }}
+        {{ form.message }}
+        {{ form.message.errors }}
+    </div>
+    <input type="submit" value="Submit">
+</form>
 </div>
 {% endblock %}
