@@ -16,3 +16,9 @@ class ContactForm(models.Model):
     customer_email = models.EmailField()
     customer_name = models.CharField(max_length=64)
     message = models.TextField()
+
+class login_view(models.Model):
+    contact_form_uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    customer_email = models.EmailField()
+    customer_name = models.CharField(max_length=64)
+    password = models.CharField(max_length=64)

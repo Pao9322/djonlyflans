@@ -1,42 +1,29 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-{%block 'content'%}
+{% block 'content' %}
 <div class="row g-3 align-items-center">
-    <div class="col-xl-10 mx-auto col-lg-5">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis text-center">Ingresa</h1>
-        <p class="fs-4 text-center">Inicia sesión para más contenido de flanes</p>
-        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" data-bitwarden-watching="1">
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
-            <div class="checkbox mb-3">
-                <input type="checkbox" value="remember-me"> Remember me
-            </div>
-            <button class="w-100 btn btn-lg btn-primary bg-danger" type="submit">Sign up</button>
-            <small class="text-body-secondary">By clicking Sign Up button, you agree to the terms of use.</small>
-        </form>
-    </div>
+  <div class="col-xl-10 mx-auto col-lg-5">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis text-center">Ingresa</h1>
+      <p class="fs-4 text-center">Inicia sesión para más contenido de flanes</p>
+      <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+      <button class="w-100 btn btn-lg btn-primary bg-dark" type="submit">Sign in</button>
+      </form>
+  </div>
 </div>
-
 <div class="container p-4">
     <div class="row row-cols-md-2 row-cols-md-4 g-4">
-        {%for flan in flanes_pub %}
-      <div class="col">
-        <div class="card">
-          <img src="{{flan.image_url}}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{flan.name}}</h5>
-            <p class="card-text">{{flan.description}}</p>
-          </div>
+        {% for flan in flanes_pub %}
+        <div class="col">
+            <div class="card">
+                <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ flan.name }}</h5>
+                    <p class="card-text">{{ flan.description }}</p>
+                </div>
+            </div>
         </div>
-      </div>
-      {% endfor %}
+        {% endfor %}
     </div>
-  </div>
-  
+</div>
 {% endblock %}
